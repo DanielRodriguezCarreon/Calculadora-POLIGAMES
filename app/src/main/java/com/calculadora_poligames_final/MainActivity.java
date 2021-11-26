@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonSuma,buttonResta,buttonMultiplica,buttonDivide,buttonVolumen;
+    private Button buttonSuma,buttonResta,buttonMultiplica,buttonDivide,buttonVolumen,buttonLibrasGramos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) { abrirVolumen(); }
         });
+        buttonLibrasGramos = findViewById(R.id.buttonLibrasGramos);
+        buttonLibrasGramos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirLibrasGramos();
+            }
+        });
     }
 
     @Override
@@ -73,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
     }
     private void abrirVolumen(){
         Intent intent = new Intent(this, VolumenEsferaActivity.class);
+        startActivity( intent );
+    }
+    private void abrirLibrasGramos(){
+        Intent intent = new Intent(this, LibrasGramosActivity.class);
         startActivity( intent );
     }
 }
